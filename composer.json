@@ -13,5 +13,7 @@
             "email": "jakubpachut@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "tecnickcom/tcpdf": "^6.9"
+    }
 }
