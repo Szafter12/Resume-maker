@@ -1,0 +1,17 @@
+{
+    "name": "jakub-pachut/pdf-maker",
+    "description": "Simple PDF file maker",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "JakubPachut\\PdfMaker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Szafter12",
+            "email": "jakubpachut@gmail.com"
+        }
+    ],
+    "require": {}
+}
