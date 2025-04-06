@@ -88,5 +88,4 @@ $html = '
 
 $pdf->writeHTML($html, true, false, true, false, '');
 
-// Zapisz lub pokaż
-$pdf->Output('resume.pdf', 'I'); // 'I' = inline (do przeglądarki), 'D' = download
+$pdf->Output('resume.pdf', 'I');
