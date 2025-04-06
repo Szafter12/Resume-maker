@@ -1,19 +1,19 @@
 {
-    "name": "jakub-pachut/pdf-maker",
-    "description": "Simple PDF file maker",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "JakubPachut\\PdfMaker\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Szafter12",
-            "email": "jakubpachut@gmail.com"
-        }
-    ],
-    "require": {
-        "tecnickcom/tcpdf": "^6.9"
-    }
+	"name": "jakub-pachut/resume_maker",
+	"description": "Simple resume file maker",
+	"type": "project",
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Szafter12",
+			"email": "jakubpachut@gmail.com"
+		}
+	],
+	"require": {
+		"tecnickcom/tcpdf": "^6.9.1"
+	}
 }
