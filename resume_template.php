@@ -2,8 +2,8 @@
 require_once './vendor/autoload.php';
 
 $pdf = new TCPDF();
+$pdf->SetMargins(0, 10, 0);
 $pdf->AddPage();
-
 $html = '
         <style>
             .title {
@@ -20,23 +20,22 @@ $html = '
                 color: #006699;
                 font-size: 16px;
                 font-weight: bold;
-                margin-top: 20px;
-                border-bottom: 1px solid #ccc;
             }
-            ul {
+            ul li {
                 padding-left: 5px;
             }
         </style>
 
-        <table cellpadding="5" cellspacing="5" style="width: 100%;">
+        <table cellpadding="20" cellspacing="0" style="width: 100%;">
             <tr>
-                <td width="40%" valign="top" style="background-color: #f2f2f2;">
-                    <img src="photo.jpg" style="width:100px; border-radius: 50%; margin-bottom: 10px;" />
-                    <p><strong>Phone:</strong> (123) 456-7890</p>
-                    <p><strong>E-mail</strong> email@example.com</p>
-                    <p><strong>LinkedIn:</strong> LinkedIn | Portfolio</p>
-                    <p><strong>GitHub:</strong> Github</p>
-
+                <td width="40%" valign="top" style="background-color: #f2f2f2; padding: 20px;">
+                    <p class="subtitle">Contact Info</p>
+                    <ul>
+                        <li><strong>Phone:</strong> (123) 456-7890</li>
+                        <li><strong>E-mail</strong> email@example.com</li>
+                        <li><strong>LinkedIn:</strong> LinkedIn | Portfolio</li>
+                        <li><strong>GitHub:</strong> Github</li>
+                    </ul>
                     <p class="subtitle">Key Skills</p>
                     <ul>
                         <li>Claims processing</li>

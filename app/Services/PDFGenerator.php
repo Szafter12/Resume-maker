@@ -23,9 +23,9 @@ class PDFGenerator
         $this->pdf->SetAuthor($_ENV['PDF_AUTHOR']);
         $this->pdf->SetCreator($_ENV['PDF_CREATOR']);
         $this->pdf->SetTitle($_ENV['PDF_TITLE']);
-        $this->pdf->SetMargins(20, 20, 20);
+        $this->pdf->SetMargins(0, 15, 0);
         $this->pdf->SetAutoPageBreak(true, 20);
-        $this->pdf->SetFont('dejavusans', '', 12);
+        $this->pdf->SetFont('dejavusans', '', 10);
     }
 
     public function addPage(): void
