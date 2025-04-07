@@ -8,8 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Data aren't validate because this is a demo project and the data are not stored in a database.
     // In a real project, you should validate the data before using it. 
 
-    // Take the data from the form submission and assign it to variables
-
     if (empty($_POST['skills']) || empty($_POST['company']) || empty($_POST['position']) || empty($_POST['startExp']) || empty($_POST['endExp'])) {
         Operations::response('error', 'All fields are required.');
         exit();

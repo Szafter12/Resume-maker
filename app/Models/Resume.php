@@ -26,7 +26,7 @@ class Resume
         <table cellpadding="15" cellspacing="0" style="width: 100%; font-size: 11px; line-height: 1.5;">
             <tr>
                 <td width="40%" style="background-color: #f2f2f2;">
-                    <h3 style="color: #8b1d41; font-size: 14px; margin-bottom: 4px;">Kontakt</h3>
+                    <h3 style="color: #8b1d41; font-size: 14px; margin-bottom: 4px;">Contact</h3>
                     <ul style="padding-left: 10px;">
                         <li><strong>Telefon:</strong> ' . $this->data['contactInfo']['phone'] . '</li>
                         <li><strong>Email:</strong> ' . $this->data['contactInfo']['email'] . '</li>
@@ -34,7 +34,7 @@ class Resume
                         <li><strong>GitHub:</strong> ' . $this->data['contactInfo']['github'] . '</li>
                     </ul>
 
-            <h3 style="color: #8b1d41; font-size: 14px; margin-top: 10px;">Umiejętności</h3>
+            <h3 style="color: #8b1d41; font-size: 14px; margin-top: 10px;">Key Skills</h3>
             <ul style="padding-left: 10px;">';
 
         foreach ($this->data['skills'] as $skill) {
@@ -43,7 +43,7 @@ class Resume
 
         $html .= '
             </ul>
-                <h3 style="color: #8b1d41; font-size: 14px; margin-top: 10px;">Edukacja</h3>
+                <h3 style="color: #8b1d41; font-size: 14px; margin-top: 10px;">Education</h3>
                 <p style="margin: 0;"><strong>' . $this->data["education"]["school"] . '</strong></p>
                 <p style="margin: 0;">' . $this->data["education"]["degree"] . '</p>
                 <p style="margin: 0;"><em>' . Operations::formatDate($this->data["education"]["startDate"]) . ' – ' . Operations::formatDate    ($this->data["education"]["endDate"]) . '</em></p>
@@ -53,7 +53,7 @@ class Resume
                 <h1 style="color:rgb(139, 29, 65); font-size: 20px; margin-bottom: 5px;">' . $this->data["contactInfo"]["name"] . ' ' . $this->data["contactInfo"]["surname"] . '</h1>
                 <p style="margin-top: 0;">' . $this->data["contactInfo"]["currPos"] . '</p>
 
-                <h3 style="color: #006699; font-size: 14px; margin-top: 10px;">Doświadczenie zawodowe</h3>
+                <h3 style="color: #006699; font-size: 14px; margin-top: 10px;">Job history</h3>
             ';
 
         $experience = $this->data['experience'];
