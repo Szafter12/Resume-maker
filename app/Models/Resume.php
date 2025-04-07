@@ -21,7 +21,7 @@ class Resume
     public function generateResume()
     {
         // Generate the PDF using the data
-        $this->pdf->addPage();
+        $this->pdf->addPageResume();
         $html = '
 <table cellpadding="15" cellspacing="0" style="width: 100%; font-size: 11px; line-height: 1.5;">
     <tr>
@@ -50,7 +50,7 @@ class Resume
         </td>
 
         <td width="60%" valign="top" style="margin-left: 20px;">
-            <h1 style="color: #8b1d41; font-size: 20px; margin-bottom: 5px;">' . $this->data["contactInfo"]["name"] . ' ' . $this->data["contactInfo"]["surname"] . '</h1>
+            <h1 style="color:rgb(139, 29, 65); font-size: 20px; margin-bottom: 5px;">' . $this->data["contactInfo"]["name"] . ' ' . $this->data["contactInfo"]["surname"] . '</h1>
             <p style="margin-top: 0;">' . $this->data["contactInfo"]["currPos"] . '</p>
 
             <h3 style="color: #006699; font-size: 14px; margin-top: 10px;">Doświadczenie zawodowe</h3>
@@ -77,7 +77,7 @@ class Resume
 </table>';
 
         $path = __DIR__ . '/../../public/storage/' . $this->filename;
-        $this->pdf->writeHTML($html);
+        $this->pdf->writeHTMLResume($html);
         try {
             $this->pdf->saveToFile($path);
         } catch (\Exception $e) {
