@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form method="POST" action="generatePDF.php">
+    <form id="resumeForm">
         <div>
             <input type="text" id="name" name="name" placeholder="Your name">
             <input type="text" id="surname" name="surname" placeholder="Your surname">

@@ -10,6 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Take the data from the form submission and assign it to variables
 
+    if (empty($_POST['skills']) || empty($_POST['company']) || empty($_POST['position']) || empty($_POST['startExp']) || empty($_POST['endExp'])) {
+        Operations::response('error', 'All fields are required.');
+        exit();
+    }
+
     $contactInfo = [];
     $contactInfo['name'] = $_POST['name'] ?? null;
     $contactInfo['surname'] = $_POST['surname'] ?? null;
@@ -19,13 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contactInfo['linkedin'] = $_POST['linkedin'] ?? null;
     $contactInfo['github'] = $_POST['github'] ?? null;
 
-    $skills = $_POST['skills'] ?? null;
+    $skills = $_POST['skills'];
 
     $experience = [];
-    $experience['company'] = $_POST['company'] ?? null;
-    $experience['position'] = $_POST['position'] ?? null;
-    $experience['startExp'] = $_POST['startExp'] ?? null;
-    $experience['endExp'] = $_POST['endExp'] ?? null;
+    $experience['company'] = $_POST['company'];
+    $experience['position'] = $_POST['position'];
+    $experience['startExp'] = $_POST['startExp'];
+    $experience['endExp'] = $_POST['endExp'];
 
     $education = [];
     $education['school'] = $_POST['school'] ?? null;
@@ -45,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Generate the PDF using the data
 
     $resume = new Resume($data);
+
     if ($resume->generateResume()) {
         Operations::response('success', 'PDF generated successfully.');
     } else {

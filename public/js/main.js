@@ -2,6 +2,7 @@ const skillsContainer = document.querySelector('#skillsContainer')
 const addSkillBtn = document.querySelector('#addSkill')
 const experienceContainer = document.querySelector('#experienceContainer')
 const addExperienceBtn = document.querySelector('#addExperience')
+const form = document.querySelector('#resumeForm')
 
 function createSkillInput(e) {
 	e.preventDefault()
@@ -38,6 +39,25 @@ function addExperience(e) {
 	})
 }
 
+function sendForm(e) {
+	e.preventDefault()
+	const formData = new FormData(this)
+
+	fetch('generatePDF.php', {
+		method: 'POST',
+		body: formData,
+	})
+		.then(response => response.json())
+		.then(data => {
+			if (data.status === 'success') {
+				alert('Form submitted successfully!')
+				window.location.href = './storage/resume.pdf'
+			} else {
+				alert('Error submitting form.')
+			}
+		})
+}
+
 addSkillBtn.addEventListener('click', createSkillInput)
 addExperienceBtn.addEventListener('click', addExperience)
-
+form.addEventListener('submit', sendForm)

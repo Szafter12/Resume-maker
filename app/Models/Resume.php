@@ -76,7 +76,13 @@ class Resume
     </tr>
 </table>';
 
+        $path = __DIR__ . '/../../public/storage/' . $this->filename;
         $this->pdf->writeHTML($html);
-        $this->pdf->output($this->filename);
+        try {
+            $this->pdf->saveToFile($path);
+        } catch (\Exception $e) {
+            return false;
+        }
+        return true;
     }
 }
