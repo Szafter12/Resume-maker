@@ -12,12 +12,12 @@ The "Resume Maker" project allows users to create simple CVs in PDF format via a
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repository/resume-maker.git
+    git clone https://github.com/your-repository/Resume-maker.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd resume-maker
+    cd Resume-maker
     ```
 
 3. Install dependencies:
@@ -37,11 +37,10 @@ The "Resume Maker" project allows users to create simple CVs in PDF format via a
     ```bash
     php -S localhost:8000
     ```
-    Alternatively, if you're using XAMPP, place the project in the `htdocs` folder and start the Apache server.
 
 6. Open your browser and navigate to:
     ```
-    http://localhost:8000
+    http://localhost:8000/public
     ```
 
 ## Technologies
