@@ -12,7 +12,7 @@
 
 <body class="d-flex flex-column align-items-center justify-content-center min-vh-100">
     <h1 class="my-4">Resume maker</h1>
-    <form class="p-4 my-5 mx-auto container" id="resumeForm">
+    <form class="p-4 my-5 mx-auto" id="resumeForm">
         <div class="py-3 d-flex flex-column gap-3">
             <h3>Personal info:</h3>
             <div class="d-flex flex-column">
@@ -95,7 +95,7 @@
         <div class="d-flex flex-column gap-3 py-3 skillDiv">
             <label for="skill">Skill:</label>
             <input type="text" name="skills[]" class="form-control w-100" placeholder="Skill">
-            <button type="button" class="btn btn-secondary remove-skill py-2 px-4 mt-2">Remove</button>
+            <button type="button" class="btn btn-danger remove-skill py-2 px-4 mt-2">Remove</button>
         </div>
     </template>
 
@@ -121,7 +121,7 @@
                     <label for="presentWork">I currently work here</label>
                 </div>
             </div>
-            <button type="button" class="btn btn-secondary remove-experience">Remove</button>
+            <button type="button" class="btn btn-danger remove-experience">Remove</button>
         </div>
     </template>
 
