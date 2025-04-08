@@ -20,9 +20,9 @@ The "Resume Maker" project allows users to create simple CVs in PDF format via a
     cd resume-maker
     ```
 
-3. Install dependencies (if any):
+3. Install dependencies:
     ```bash
-    composer install
+    composer update
     ```
 
 4. Set PDF attributes in the `.env` file:
