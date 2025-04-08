@@ -7,11 +7,12 @@
     <title>Resume maker</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="d-flex flex-column align-items-center justify-content-center min-vh-100">
-    <h1>Resume maker</h1>
-    <form class="p-4 border rounded-2 container" id="resumeForm">
+    <h1 class="my-4">Resume maker</h1>
+    <form class="p-4 my-5 mx-auto container" id="resumeForm">
         <div class="py-3 d-flex flex-column gap-3">
             <h3>Personal info:</h3>
             <div class="d-flex flex-column">
@@ -93,8 +94,8 @@
     <template id="skillTemplate">
         <div class="d-flex flex-column gap-3 py-3 skillDiv">
             <label for="skill">Skill:</label>
-            <input type="text" name="skills[]" class="form-control w-100" placeholder="Skill" required>
-            <button type="button" class="btn btn-danger remove-skill py-2 px-4 mt-2">Remove</button>
+            <input type="text" name="skills[]" class="form-control w-100" placeholder="Skill">
+            <button type="button" class="btn btn-secondary remove-skill py-2 px-4 mt-2">Remove</button>
         </div>
     </template>
 
@@ -102,15 +103,15 @@
         <div class="py-3 d-flex flex-column gap-3 experienceDiv">
             <div>
                 <label for="company">Company name:</label>
-                <input type="text" name="company[]" class="form-control" placeholder="Company" required>
+                <input type="text" name="company[]" class="form-control" placeholder="Company">
             </div>
             <div>
                 <label for="position">Position:</label>
-                <input type="text" name="position[]" class="form-control" placeholder="Position" required>
+                <input type="text" name="position[]" class="form-control" placeholder="Position">
             </div>
             <div>
                 <label for="startExp">Start Date:</label>
-                <input type="date" name="startExp[]" class="form-control" placeholder="Start date" required>
+                <input type="date" name="startExp[]" class="form-control" placeholder="Start date">
             </div>
             <div>
                 <label for="endExp">End Date:</label>
@@ -120,7 +121,7 @@
                     <label for="presentWork">I currently work here</label>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger remove-experience">Remove</button>
+            <button type="button" class="btn btn-secondary remove-experience">Remove</button>
         </div>
     </template>
 

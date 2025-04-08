@@ -8,7 +8,8 @@ const addExperienceBtn = document.querySelector('#addExperience')
 
 const form = document.querySelector('#resumeForm')
 
-function createSkillInput() {
+function createSkillInput(e) {
+	e.preventDefault()
 	const clone = skillTemplate.content.cloneNode(true)
 	const skillDiv = clone.querySelector('.skillDiv')
 	skillsContainer.appendChild(clone)
@@ -19,7 +20,8 @@ function createSkillInput() {
 	})
 }
 
-function addExperience() {
+function addExperience(e) {
+	e.preventDefault()
 	const clone = experienceTemplate.content.cloneNode(true)
 	const experienceDiv = clone.querySelector('.experienceDiv')
 	experienceContainer.appendChild(clone)
