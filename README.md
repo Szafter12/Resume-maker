@@ -47,6 +47,8 @@ The "Resume Maker" project allows users to create simple CVs in PDF format via a
 ## Technologies
 
 - PHP
+- JavaScript
+- Bootstrap
 - TCPDF (for PDF generation)
 - Object-Oriented Programming (OOP)
 
