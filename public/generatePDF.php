@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Data aren't validate because this is a demo project and the data are not stored in a database.
     // In a real project, you should validate the data before using it. 
 
-    if (empty($_POST['skills']) || empty($_POST['company']) || empty($_POST['position']) || empty($_POST['startExp']) || empty($_POST['endExp'])) {
+    if (empty($_POST['skills']) || empty($_POST['company']) || empty($_POST['position']) || empty($_POST['startExp'])) {
         Operations::response('error', 'All fields are required.');
         exit();
     }
@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $experience['startExp'] = $_POST['startExp'];
     $experience['endExp'] = $_POST['endExp'];
 
+
     $education = [];
     $education['school'] = $_POST['school'] ?? null;
     $education['degree'] = $_POST['degree'] ?? null;
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     // Generate the PDF using the data
-
+  
     $resume = new Resume($data);
 
     if ($resume->generateResume()) {

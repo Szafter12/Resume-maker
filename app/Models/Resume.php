@@ -60,11 +60,18 @@ class Resume
         $expCount = count($experience['company']);
 
         for ($i = 0; $i < $expCount; $i++) {
+            $endDate = $experience['endExp'][$i] === 'Present' ? 'Present' : Operations::formatDate($experience['endExp'][$i]);
             $html .= '
                 <strong>' . ucfirst($experience['company'][$i]) . '</strong>
                 <ul style="margin-bottom: 4px;">
                     <li>' . ucfirst($experience['position'][$i]) . '</li>
-                    <li><em>' . Operations::formatDate($experience['startExp'][$i]) . ' – ' . Operations::formatDate($experience['endExp'][$i]) . '</em></li>
+                    <li>
+                        <em>' 
+                            . Operations::formatDate($experience['startExp'][$i])
+                            . ' – ' 
+                            . $endDate . 
+                        '</em>
+                    </li>
                 </ul>
             ';
         }

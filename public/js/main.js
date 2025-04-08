@@ -1,47 +1,52 @@
 const skillsContainer = document.querySelector('#skillsContainer')
+const skillTemplate = document.querySelector('#skillTemplate')
 const addSkillBtn = document.querySelector('#addSkill')
+
 const experienceContainer = document.querySelector('#experienceContainer')
+const experienceTemplate = document.querySelector('#experienceTemplate')
 const addExperienceBtn = document.querySelector('#addExperience')
+
 const form = document.querySelector('#resumeForm')
 
-function createSkillInput(e) {
-	e.preventDefault()
-	const skillDiv = document.createElement('div')
-	skillDiv.classList.add('py-3')
-	skillDiv.innerHTML = `
-            <input type="text" name="skills[]" class="form-control" placeholder="Skill" required>
-            <button type="button" class="btn btn-danger remove-skill">Remove</button>
-        `
-	skillsContainer.appendChild(skillDiv)
+function createSkillInput() {
+	const clone = skillTemplate.content.cloneNode(true)
+	const skillDiv = clone.querySelector('.skillDiv')
+	skillsContainer.appendChild(clone)
+
 	const removeSkillBtn = skillDiv.querySelector('.remove-skill')
 	removeSkillBtn.addEventListener('click', function () {
 		skillDiv.remove()
 	})
 }
 
-function addExperience(e) {
-	e.preventDefault()
-	const experienceDiv = document.createElement('div')
-	experienceDiv.classList.add('py-3')
-	experienceDiv.innerHTML = `
-			<input type="text" name="company[]" class="form-control" placeholder="Company" required>
-            <input type="text" name="position[]" class="form-control" placeholder="Position" required>
-			<label for="startExp">Start Date</label>
-            <input type="date" name="startExp[]" class="form-control" placeholder="Start date" required>
-			<label for="endExp">End Date</label>
-            <input type="date" name="endExp[]" class="form-control" placeholder="End date" required>
-            <button type="button" class="btn btn-danger remove-experience">Remove</button>
-        `
-	experienceContainer.appendChild(experienceDiv)
+function addExperience() {
+	const clone = experienceTemplate.content.cloneNode(true)
+	const experienceDiv = clone.querySelector('.experienceDiv')
+	experienceContainer.appendChild(clone)
+
 	const removeExperienceBtn = experienceDiv.querySelector('.remove-experience')
 	removeExperienceBtn.addEventListener('click', function () {
 		experienceDiv.remove()
+	})
+
+	const presentCheckbox = experienceDiv.querySelector('.presentWork')
+	presentCheckbox.addEventListener('change', () => {
+		const endDateInput = experienceDiv.querySelector('.endDate')
+		if (presentCheckbox.checked) {
+			endDateInput.value = ''
+			endDateInput.disabled = true
+		} else {
+			endDateInput.disabled = false
+		}
 	})
 }
 
 function sendForm(e) {
 	e.preventDefault()
 	const formData = new FormData(this)
+	const sendBtn = document.querySelector('.sendBtn')
+	sendBtn.disabled = true
+	sendBtn.textContent = 'Sending...'
 
 	fetch('generatePDF.php', {
 		method: 'POST',
@@ -53,8 +58,19 @@ function sendForm(e) {
 				alert('Form submitted successfully!')
 				window.location.href = './storage/resume.pdf'
 			} else {
-				alert('Error submitting form.')
+				alert(data.message + '!')
 			}
+		})
+		.catch(error => {
+			console.error('Error:', error)
+			alert('An error occurred while submitting the form.')
+		})
+		.finally(() => {
+			sendBtn.disabled = false
+			sendBtn.textContent = 'Generate PDF'
+			form.reset()
+			skillsContainer.innerHTML = ''
+			experienceContainer.innerHTML = ''
 		})
 }
 
