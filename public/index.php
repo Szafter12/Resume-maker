@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-end py-3">
-            <button class="btn btn-success py-2 px-3 sendBtn" type="submit">Generate</button>
+            <button class="btn btn-success py-2 px-3 sendBtn" type="submit">Generate PDF</button>
         </div>
     </form>
 

@@ -70,9 +70,6 @@ function sendForm(e) {
 		.finally(() => {
 			sendBtn.disabled = false
 			sendBtn.textContent = 'Generate PDF'
-			form.reset()
-			skillsContainer.innerHTML = ''
-			experienceContainer.innerHTML = ''
 		})
 }
 
