@@ -59,5 +59,5 @@ The "Resume Maker" project allows users to create simple CVs in PDF format via a
 ## Notes
 
 - The design of the generated PDF is not perfect, as the TCPDF library has limited customization options. If you're looking for better design, you might want to explore other solutions or more advanced libraries.
-- This project is mainly for learning purposes and practicing object-oriented programming in PHP. The focus was on code structure.
+- This project is mainly for learning purposes and practicing object-oriented programming in PHP and work with pdf file. The focus was on code structure.
 - PDF attributes such as title, author, and keywords can be easily customized via the `.env` file to suit your needs.
