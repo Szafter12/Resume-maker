@@ -47,6 +47,7 @@ The "Resume Maker" project allows users to create simple CVs in PDF format via a
     ```
     http://localhost:8000/public
     ```
+![preview](view.png)
 
 ## Technologies
 
