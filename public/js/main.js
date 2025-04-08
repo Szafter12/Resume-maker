@@ -48,7 +48,7 @@ function sendForm(e) {
 	sendBtn.disabled = true
 	sendBtn.textContent = 'Sending...'
 
-	fetch('generatePDF.php', {
+	fetch('public/generatePDF.php', {
 		method: 'POST',
 		body: formData,
 	})
@@ -56,7 +56,7 @@ function sendForm(e) {
 		.then(data => {
 			if (data.status === 'success') {
 				alert('Form submitted successfully!')
-				window.location.href = './storage/resume.pdf'
+				window.location.href = 'public/storage/resume.pdf'
 			} else {
 				alert(data.message + '!')
 			}

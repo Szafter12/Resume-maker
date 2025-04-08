@@ -8,6 +8,11 @@ The "Resume Maker" project allows users to create simple CVs in PDF format via a
 - PDF file generation based on the filled-out form.
 - Basic PDF attributes (such as title, author, etc.) can be configured in the `.env` file.
 
+## Requirements
+
+- PHP version 7 or later
+- Composer version 2.8.5
+
 ## How to Run the Project
 
 1. Clone the repository:
